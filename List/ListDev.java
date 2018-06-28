@@ -18,58 +18,68 @@ class ListDev {
     }
 
     public void addHumans() {
-        humans.clear();
-        if (humans != null)
-            for (int i = 0; i < MyList.N; i++) {
-                humans.add(new Human("Name #" + i, i));
-            }
+        humans = new ArrayList<>();
+        humans.add(new Human("Andrew", 26));
+        humans.add(new Human("Victor",  31));
+        humans.add(new Human("Valera",  15));
+        humans.add(new Human("Denis",  18));
+        humans.add(new Human("Kolya", 20));
+        humans.add(new Human("Nadya",  7));
+        humans.add(new Human("Sofia",  13));
+        humans.add(new Human("Oleg", 45));
+        humans.add(new Human("Julia",  29));
+        humans.add(new Human("Nikita",  33));
+        humans.add(new Human("Nastya",  6));
+
     }
 
     public void showHumans() {
-        StringBuilder stringBuilder = new StringBuilder(" List: ");
-        stringBuilder.append(humans);
-        System.out.println(humans);
+        StringBuilder str = new StringBuilder("Default List: ");
+        for (Human human : humans) {
+            str.append(human).append(" ");
+        }
+        System.out.println(str);
     }
 
     public void enumShow() {
-        Enumeration<Human> enumeration = Collections.enumeration(humans);
-        StringBuilder stringBuilder = new StringBuilder(" Enumeration:\n");
-        while (enumeration.hasMoreElements()) {
-            stringBuilder.append(enumeration.nextElement()).append(System.lineSeparator());
+        Enumeration<Human> enumHuman = Collections.enumeration(humans);
+        StringBuilder str = new StringBuilder();
+        while (enumHuman.hasMoreElements()) {
+            str.append(enumHuman.nextElement()).append("\n");
         }
-        System.out.println(stringBuilder);
+        System.out.println(str);
     }
 
     public void iterShow() {
         Iterator<Human> humanIterator = humans.iterator();
-        StringBuilder stringBuilder = new StringBuilder(" Iterator:\n");
+        StringBuilder str = new StringBuilder();
         Human human;
         while (humanIterator.hasNext()) {
             human = humanIterator.next();
             if (human != null)
-                stringBuilder.append(human.toString()).append(System.lineSeparator());
+                str.append(human.toString()).append(("\n"));
         }
 
-        System.out.println(stringBuilder);
+        System.out.println(str);
     }
 
     public void listIterShow() {
-        ListIterator<Human> humanListIterator = humans.listIterator();
-        StringBuilder stringBuilder = new StringBuilder(" Iterator:\n");
-        Human human;
-        while (humanListIterator.hasNext()) {
-            human = humanListIterator.next();
+        ListIterator<Human> humanListIter = humans.listIterator();
+        StringBuilder str = new StringBuilder();
+        while (humanListIter.hasNext()) {
+            Human human;
+            human = humanListIter.next();
             if (human != null)
-                stringBuilder.append(human.toString()).append(System.lineSeparator());
+                str.append(human.toString()).append(("\n"));
         }
-        System.out.println(stringBuilder);
+        System.out.println(str);
     }
 
     int iterDelByAge(int age) {
-        Iterator<Human> iterator = humans.iterator();
-        while (iterator.hasNext()) {
-            if (iterator.next().getAge() == age) {
-                iterator.remove();
+        Iterator<Human> humanIter = humans.iterator();
+        while (humanIter.hasNext()) {
+            if (humanIter.next().getAge() == age) {
+                humanIter.remove();
             }
         }
         return age;
@@ -77,26 +87,26 @@ class ListDev {
 
 
     void listIterDelByAge(int age) {
-        ListIterator<Human> humanListIterator = humans.listIterator();
-        while (humanListIterator.hasNext()) {
-            if (humanListIterator.next().getAge() == age) {
-                humanListIterator.remove();
+        ListIterator<Human> humanListIter = humans.listIterator();
+        while (humanListIter.hasNext()) {
+            if (humanListIter.next().getAge() == age) {
+                humanListIter.remove();
             }
         }
     }
 
     void listIterSetByAge(Human human, int age) {
-        ListIterator<Human> humanListIterator = humans.listIterator();
-        while (humanListIterator.hasNext()) {
-            if (humanListIterator.next().getAge() == age) {
-                humanListIterator.set(human);
+        ListIterator<Human> humanListIter = humans.listIterator();
+        while (humanListIter.hasNext()) {
+            if (humanListIter.next().getAge() == age) {
+                humanListIter.set(human);
             }
         }
     }
 
     void listIterAdd(Human human) {
-        ListIterator<Human> humanListIterator = humans.listIterator();
-        humanListIterator.add(human);
+        ListIterator<Human> humanListIter = humans.listIterator();
+        humanListIter.add(human);
     }
 
     void comparableSortShow() {

@@ -3,7 +3,6 @@ package com.example.android.ex4_artem.List;
 import com.example.android.ex4_artem.Human.Human;
 
 public class MyList {
-    public static final int N = 20;
     private static MyList instance;
 
     public static MyList getInstance() {
@@ -22,7 +21,7 @@ public class MyList {
     public void iter() {
         ListDev listDev = new ListDev();
         listDev.addHumans();
-        int ageToDelete = 2;
+        int ageToDelete = 13;
         System.out.println("Delete Human with age: " + listDev.iterDelByAge(ageToDelete));
         listDev.iterShow();
         listDev.showHumans();
@@ -30,14 +29,14 @@ public class MyList {
 
     public void listIter() {
         ListDev listDev = new ListDev();
-        int ageToDelete = 2;
+        int ageToDelete = 7;
         listDev.addHumans();
         System.out.println("Delete Human with age: " + ageToDelete);
         listDev.listIterDelByAge(ageToDelete);
 
-        int ageToSet = 1;
+        int ageToSet = 26;
         int newAge = 10;
-        StringBuilder newName = new StringBuilder("Name #").append(newAge);
+        StringBuilder newName = new StringBuilder("Kristina");
 
         Human human = new Human(newName.toString(), newAge);
 
@@ -45,7 +44,7 @@ public class MyList {
         listDev.listIterSetByAge(human, ageToSet);
 
         newName.append(7);
-        human = new Human(newName.toString(), 25);
+        human = new Human("Artem", 24);
         System.out.println("Add Human: " + human);
         listDev.listIterAdd(human);
         listDev.listIterShow();

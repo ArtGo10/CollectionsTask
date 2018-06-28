@@ -16,37 +16,37 @@ public class Main {
     private static void myList() {
         MyList myList = MyList.getInstance();
 
-        System.out.println("Enumeration");
+        System.out.println("Enumeration:");
         myList.enumer();
 
-        System.out.println("Iterator");
+        System.out.println("Iterator:");
         myList.iter();
 
-        System.out.println("ListIterator");
+        System.out.println("ListIterator:");
         myList.listIter();
 
-        System.out.println("Comparable");
+        System.out.println("Comparable:");
         myList.comparable();
 
-        System.out.println("Comparator");
+        System.out.println("Comparator:");
         myList.comparator();
     }
 
     private static void mySet() {
         MySet mySet = MySet.getInstance();
 
-        System.out.println("HashSet");
+        System.out.println("HashSet:");
         mySet.hashSet();
 
-        System.out.println("TreeSet");
+        System.out.println("TreeSet:");
         mySet.treeSet();
     }
 
     private static void myMap() {
         MyMap myMap = MyMap.getInstance();
-        System.out.println("HashMap");
+        System.out.println("HashMap:");
         myMap.map();
-        System.out.println("HashMap Iterator");
+        System.out.println("HashMap Iterator:");
         myMap.mapIterator();
     }
 }

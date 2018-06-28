@@ -32,10 +32,10 @@ public class Human implements Comparable<Human> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Human human = (Human) o;
+    public boolean equals(Object ob) {
+        if (this == ob) return true;
+        if (ob == null || getClass() != ob.getClass()) return false;
+        Human human = (Human) ob;
         return age == human.age &&
                 Objects.equals(name, human.name);
     }
@@ -47,10 +47,7 @@ public class Human implements Comparable<Human> {
 
     @Override
     public String toString() {
-        return "Human{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return name + " " + age;
     }
 
     @Override

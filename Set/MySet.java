@@ -1,6 +1,6 @@
 package com.example.android.ex4_artem.Set;
 
-public class MySet {
+public class    MySet {
     private static final int N = 40;
 
     private static MySet instance;
@@ -13,13 +13,13 @@ public class MySet {
 
     public void hashSet(){
         SetDev setDev = new SetDev();
-        setDev.addSet(N, setDev.getHashSetHumans());
+        setDev.addSet(setDev.getHashSetHumans());
         setDev.showHashSet();
     }
 
     public void treeSet(){
         SetDev setDev = new SetDev();
-        setDev.addSet(N, setDev.getTreeSetHumans());
+        setDev.addSet(setDev.getTreeSetHumans());
         setDev.showTreeSet();
     }
 }
